@@ -37,6 +37,6 @@ class Burger {
     };      
 };
 
-showOrder () {
-  this.total.innerText = `Итого: ${this.price} рублей и ${this.calories} калорий`;
-};
+// showTotal () {
+//   this.total.innerText = `Итого: ${this.price} рублей и ${this.calories} калорий`;
+// };
