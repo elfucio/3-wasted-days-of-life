@@ -12,36 +12,37 @@
     <form action="#" id="uForm">
         <fieldset>
             <label>
-                <input type="radio" name="size" data-price="100" data-cal="40" value="big" checked> Большой (100 рублей, 40 калорий) / Big (100 rub, 40 kal)
+                <input type="radio" name="size" data-price="10"  value="big" checked> Большой (100 рублей, 40 калорий) / Big (100 rub, 40 kal)
             </label>
             <label>
-                <input type="radio" name="size" data-price="50" data-cal="20" value="small"> Маленький (50 рублей, 20 калорий) / Small (50 rub, 20 kal)
+                <input type="radio" name="size" data-price="50" data-calories="20" value="small"> Маленький (50 рублей, 20 калорий) / Small (50 rub, 20 kal)
             </label>
         </fieldset>
         <h3 class="title">Выбери начинку / Choose stuffing</h3>
         <fieldset>
             <label>
-                <input type="radio" name="stuffing" data-price="10" data-cal="20" value="cheese" checked> С сыром (+10 рублей, +20 калорий) / Cheese (10 rub, 20 kal)
+                <input type="radio" name="stuffing" data-price="10" data-calories="20" value="cheese" checked> С сыром (+10 рублей, +20 калорий) / Cheese (10 rub, 20 kal)
             </label>
             <label>
-                <input type="radio" name="stuffing" data-price="20" data-cal="5" value="salad"> С салатом (+20 рублей, +5 калорий) / Salad (20 rub, 5 kal)
+                <input type="radio" name="stuffing" data-price="20" data-calories="5" value="salad"> С салатом (+20 рублей, +5 калорий) / Salad (20 rub, 5 kal)
             </label>
             <label>
-                <input type="radio" name="stuffing" data-price="15" data-cal="10" value="potato"> С картофелем (+15 рублей, +10 калорий) / Potato (15 rub, 10 kal)
+                <input type="radio" name="stuffing" data-price="15" data-calories="10" value="potato"> С картофелем (+15 рублей, +10 калорий) / Potato (15 rub, 10 kal)
             </label>
         </fieldset>
         <h3 class="title">Дополнительно / Extra toppins</h3>
         <fieldset>
             <label>
-                <input type="checkbox" name="extra" data-price="15" data-cal="0" value="flavour"> Приправа (+15 рублей, +0 калорий) / Flavour (15 rub, 0 kal)
+                <input type="checkbox" name="extra" data-price="15" data-calories="0" value="flavour"> Приправа (+15 рублей, +0 калорий) / Flavour (15 rub, 0 kal)
             </label>
             <label>
-                <input type="checkbox" name="extra" data-price="20" data-cal="5" value="mayo"> Майонез (+20 рублей, +5 калорий) / Mayo (20 rub, 5 kal)
+                <input type="checkbox" name="extra" data-price="20" data-calories="5" value="mayo"> Майонез (+20 рублей, +5 калорий) / Mayo (20 rub, 5 kal)
             </label>
         </fieldset>
     </form>
+    <h3 class="choice">Ваш выбор: / You chose: 0</h3>
     <h3 class="total">Итого: 0 / Total</h3>
-    <button id="btn">Рассчитать стоимость и калорийность / Calculate cost and kal</button>
+    <button id="btn">Добавить / Calculate cost and kal</button>
     
     <script src="js.js"></script>
 </body>
