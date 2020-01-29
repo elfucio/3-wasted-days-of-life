@@ -3,12 +3,14 @@
 let uForm = document.querySelector('#uForm'),
     btn = document.querySelector ('#btn'),
     total = document.querySelector ('.total');
-      
-btn.addEventListener('click', function() {
+
+uForm.addEventListener('change', calculateOrder);
+btn.addEventListener('click', calculateOrder);
+
+function calculateOrder() {
   let burger = new Burger ('price', 'calories', 'size', 'stuffing', 'extra');
   burger.showOrder();
-  console.log(burger);
-});
+}
 
 class Burger {
     constructor (price, calories, size, stuffing, extra) {
@@ -46,8 +48,8 @@ class Burger {
     _getExtra (attrName) {
       let objArr = [...uForm.querySelectorAll (`input[name=${attrName}]:checked`)];
       let arr = [];
-      objArr.forEach (el => {
-          arr.push ([el.dataset.price, el.dataset.calories]);
+      objArr.forEach (i => {
+          arr.push ([i.dataset.price, i.dataset.calories]);
       });
       return arr;
     }
@@ -55,10 +57,9 @@ class Burger {
     calculateOrder() {		
       this.price = +this.size.price + +this.stuffing.price;
       this.calories = +this.size.calories + +this.stuffing.calories;
-      this.extra.forEach (element => {
-        this.price += +(element[0]);
-        this.calories += +(element[1]);
-        console.log(this.extra);
+      this.extra.forEach (i => {
+        this.price += +(i[0]);
+        this.calories += +(i[1]);
       });
     }
 
