@@ -47,7 +47,7 @@ class Burger {
       let objArr = [...uForm.querySelectorAll (`input[name=${attrName}]:checked`)];
       let arr = [];
       objArr.forEach (el => {
-          arr.push ([el.value, el.dataset.price, el.dataset.calories]);
+          arr.push ([el.dataset.price, el.dataset.calories]);
       });
       return arr;
     }
@@ -56,13 +56,14 @@ class Burger {
       this.price = +this.size.price + +this.stuffing.price;
       this.calories = +this.size.calories + +this.stuffing.calories;
       this.extra.forEach (element => {
-        this.price += element.dataset.price;
-        this.calories += element.dataset.calories;
+        this.price += +(element[0]);
+        this.calories += +(element[1]);
+        console.log(this.extra);
       });
     }
 
     showOrder () {		
       this.calculateOrder();
-        total.innerText = `Итого: ${this.price} рублей, ${this.calories} калорий`;
+        total.innerText = `Итого: ${this.price} рублей / rub, ${this.calories} калорий / calories`;
     }
 }
