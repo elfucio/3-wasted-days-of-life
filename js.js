@@ -4,13 +4,8 @@ let uForm = document.querySelector('#uForm'),
     btn = document.querySelector ('#btn'),
     total = document.querySelector ('.total');
 
-uForm.addEventListener('change', calculateOrder);
-btn.addEventListener('click', calculateOrder);
-
-function calculateOrder() {
-  let burger = new Burger ('price', 'calories', 'size', 'stuffing', 'extra');
-  burger.showOrder();
-}
+uForm.addEventListener('change', updateOrder);
+btn.addEventListener('click', updateOrder);
 
 class Burger {
     constructor (price, calories, size, stuffing, extra) {
@@ -63,8 +58,13 @@ class Burger {
       });
     }
 
-    showOrder () {		
+    showTotal () {		
       this.calculateOrder();
         total.innerText = `Итого: ${this.price} рублей / rub, ${this.calories} калорий / calories`;
     }
+}
+
+function updateOrder() {
+  let burger = new Burger ('price', 'calories', 'size', 'stuffing', 'extra');
+  burger.showTotal();
 }
