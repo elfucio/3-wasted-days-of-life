@@ -7,6 +7,11 @@ let uForm = document.querySelector('#uForm'),
 uForm.addEventListener('change', updateOrder);
 btn.addEventListener('click', updateOrder);
 
+function updateOrder() {
+  let burger = new Burger ('price', 'calories', 'size', 'stuffing', 'extra');
+  burger.showTotal();
+}
+
 class Burger {
     constructor (price, calories, size, stuffing, extra) {
       this.price = 0;
@@ -64,7 +69,4 @@ class Burger {
     }
 }
 
-function updateOrder() {
-  let burger = new Burger ('price', 'calories', 'size', 'stuffing', 'extra');
-  burger.showTotal();
-}
+updateOrder();
